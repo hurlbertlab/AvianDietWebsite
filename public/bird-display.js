@@ -1,19 +1,344 @@
 const $root = $('#root');
 
+//Below are the sample values for testing. These represent some species and
+//prey options that will be present in the final product.
+//These can later be put into a different file and they should be in one now,
+//but I wasn't really sure how to connect them.
+
+let species = [];
+
+species[0]= {
+    commonName: "Bobolink",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Icteridae",
+    genus: "Dolichonyx",
+    species: "D. oeyzivorus",
+    records: 444,
+    studies: 7,
+    
+    
+}
+
+species[1]= {
+    commonName: "Grasshopper Sparrow",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Passerellidae",
+    genus: "Ammodramus",
+    species: "A. savannarum",
+    records: 336,
+    studies: 5,
+    
+}
+
+species[2]= {
+    commonName: "Philidelphia Vireo",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Vireonidae",
+    genus: "Vireo",
+    species: "V. philadelphicus",
+    records: 749,
+    studies: 11,
+    
+}
+
+species[3]= {
+    commonName: "Indigo Bunting",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Cardinalidae",
+    genus: "Passerina",
+    species: "P. cyanea",
+    records: 810,
+    studies: 12,
+    
+}
+
+species[4]= {
+    commonName: "Oak Titmouse",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Paridae",
+    genus: "Baeolophus",
+    species: "B. inornatus",
+    records: 583,
+    studies: 9,
+}
+
+species[5]= {
+    commonName: "Yellow-billed Cuckoo",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Cuculiformes",
+    family: "Cuculidae",
+    genus: "Coccyzus",
+    species: "C. americanus",
+    records: 198,
+    studies: 5,
+    
+}
+
+species[6]= {
+    commonName: "Golden-crowned Kinglet",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Regulidae",
+    genus: "Regulus",
+    species: "R. satrapa",
+    records: 689,
+    studies: 8,
+    
+}
+
+species[7]= {
+    commonName: "California Scrub-Jay",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Corvidae",
+    genus: "Aphelocoma",
+    species: "A. californica",
+    records: 700,
+    studies: 8,
+    
+}
+
+species[8]= {
+    commonName: "Yellow-billed Magpie",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "",
+    family: "",
+    genus: "",
+    species: "",
+    records: 234,
+    studies: 4,
+    
+}
+
+species[9]= {
+    commonName: "Baltimore Oriole",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Icteridae",
+    genus: "Icterus",
+    species: "I. galbula",
+    records: 259,
+    studies: 3,
+    
+}
+
+species[10]= {
+    commonName: "Cedar Waxwing",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Bombycillidae",
+    genus: "Bombycilla",
+    species: "B. cedrorum",
+    records: 688,
+    studies: 10,
+    
+}
+
+species[11]= {
+    commonName: "Tennessee Warbler",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Parulidae",
+    genus: "Leiothlypis",
+    species: "L. peregrina",
+    records: 799,
+    studies: 11,
+    
+}
+
+species[12]= {
+    commonName: "Elegant Trogon",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Trogoniformes",
+    family: "Trogonidae",
+    genus: "Trogon",
+    species: "T. elegans",
+    records: 801,
+    studies: 12,
+    
+}
+
+species[13]= {
+    commonName: "Evening Grosbeak",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Fringillidae",
+    subfamily: "Carduelinae",
+    genus: "Coccothraustes",
+    species: "C. vespertinus",
+    records: 523,
+    studies: 4,
+    
+}
+
+species[14]= {
+    commonName: "Chipping Sparrow",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Passerellidae",
+    genus: "Spizella",
+    species: "S. passerina",
+    records: 783,
+    studies: 9,
+    
+}
+
+species[15]= {
+    commonName: "Red-tailed Hawk",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Accipitriformes",
+    family: "Accipitridae",
+    genus: "Buteo",
+    species: "B. jamaicensis",
+    records: 877,
+    studies: 12,
+    
+}
+
+species[16]= {
+    commonName: "Blue Grosbeak",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Cardinalidae",
+    genus: "Passerina",
+    species: "P. caerulea",
+    records: 300,
+    studies: 5,
+    
+}
+
+species[17]= {
+    commonName: "Northern Cardinal",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Cardinalidae",
+    genus: "Cardinalis",
+    species: "C. cardinalis",
+    records: 500,
+    studies: 10,
+    prey: [{
+        preyName: "Caryophyllales",
+        items: .3638,
+        weight: "NA",
+        occur: ".0543"
+    }]
+    
+}
+
+species[18]= {
+    commonName: "Bald Eagle",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Accipitriformes",
+    family: "Accipitridae",
+    genus: "Haliaeetus",
+    species: "H. leucocephalus",
+    records: "1218",
+    studies: "22",
+
+    
+}
+
+
+
 $(function () {
     renderPage();
 });
 
+
+
 export function renderPage() {
 
+    let birdName=window.location.search;
+    console.log("bird name is " + birdName);
+    let a=birdName;
+    var b = '';
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] >= 'A' && a[i] <= 'z' || a[i]=='+') {
+            if(a[i]=='+'){
+                b+=' ';
+            }
+            else
+            {b += a[i];}
+            
+        }
+    }
+    console.log(b);
+
+    b=b.substring(8);
+    console.log(b);
+
     let r;
+    let thisBird=species[0];
+
+    var settings = {
+        "url": "https://birddietmiddlelayer.herokuapp.com/bird_search?bird=" + b,
+        "method": "GET",
+        "timeout": 0,
+      };
+      
+      $.ajax(settings).done(function (response) {
+        thisBird=response;
+      });
+
+
+    // for(let i=0; i<species.length; i++) {
+    //     if(b==species[i].commonName) {
+    //         thisBird=species[i];
+    //         break;
+    //     }
+    // }
+
+    
 
     r=`
     <br><br><br>
         <div>
             <div class="columns">
                 <div class="column">
-                    <h1 class="subtitle">What does <b>Northern Cardinal</b> eat?</h1>
+                    <h1 class="subtitle">What does <b>${b}</b> eat?</h1>
             
                     <div class="columns">
                         <div class="column">
@@ -65,9 +390,57 @@ export function renderPage() {
               <option value="winter">Winter</option>
               </select> in <select name="regions" id="regions">
               <option value="allRegions">all regions</option>
-              <option value="region1">region 1</option>
-              <option value="region22">region 2</option>
-              <option value="region3">region 3</option>
+              <option value="alabama">Alabama</option>
+              <option value="alaska">Alaska</option>
+              <option value="arizona">Arizona</option>
+              <option value="arkansas">Arkansas</option>
+              <option value="california">California</option>
+              <option value="colorado">Colorado</option>
+              <option value="connecticut">Connecticut</option>
+              <option value="delaware">Delaware</option>
+              <option value="florida">Florida</option>
+              <option value="georgia">Georgia</option>
+              <option value="hawaii">Hawaii</option>
+              <option value="idaho">Idaho</option>
+              <option value="illinois">Illinois</option>
+              <option value="indiana">Indiana</option>
+              <option value="iowa">Iowa</option>
+              <option value="kansas">Kansas</option>
+              <option value="kentucky">Kentucky</option>
+              <option value="louisiana">Louisiana</option>
+              <option value="maine">Maine</option>
+              <option value="maryland">Maryland</option>
+              <option value="massachusetts">Massachusetts</option>
+              <option value="michigan">Michigan</option>
+              <option value="minnesota">Minnesota</option>
+              <option value="mississippi">Mississippi</option>
+              <option value="missouri">Missouri</option>
+              <option value="montana">Montana</option>
+              <option value="nebraska">Nebraska</option>
+              <option value="nevada">Nevada</option>
+              <option value="hampshire">New Hampshire</option>
+              <option value="jersey">New Jersey</option>
+              <option value="mexico">New Mexico</option>
+              <option value="york">New York</option>
+              <option value="ncarolina">North Carolina</option>
+              <option value="ndakota">North Dakota</option>
+              <option value="ohio">Ohio</option>
+              <option value="oklahoma">Oklahoma</option>
+              <option value="oregon">Oregon</option>
+              <option value="pennsylvania">Pennsylvania</option>
+              <option value="rhode">Rhode Island</option>
+              <option value="scarolina">South Carolina</option>
+              <option value="sdakota">South Dakota</option>
+              <option value="tennessee">Tennessee</option>
+              <option value="texas">Texas</option>
+              <option value="utah">Utah</option>
+              <option value="vermont">Vermont</option>
+              <option value="virginia">Virginia</option>
+              <option value="washington">Washington</option>
+              <option value="wvirginia">West Virginia</option>
+              <option value="wisconsin">Wisconsin</option>
+              <option value="wyoming">Wyoming</option>
+
             </select>
             </div>
         </div>
@@ -83,7 +456,7 @@ export function renderPage() {
             <option value="family">family</option>
             <option value="genus">genus</option>
             <option value="species">species</option>
-          </select> the <u><b>northern cardinal <i>(Cardinalis cardinalis)</i></b></u>
+          </select> the <u><b>${thisBird.commonName} <i>(${thisBird.species})</i></b></u>
           eats: <input type="submit" id="conditions" value="Submit" />
           <br><br><br>
 
@@ -97,6 +470,7 @@ export function renderPage() {
 
 }
 
+//Generates table depending on selected conditions
 export function handleSubmitButtonPress(event) {
     let allValue = document.getElementById('all').checked;
     let itemsValue = document.getElementById('items').checked;
@@ -106,25 +480,44 @@ export function handleSubmitButtonPress(event) {
     let r=`<div id="table">
     <div class="columns">
         <div class="column">
-            <img src="col-tax.png">
-        
-
+        <table style="width:100%">
+            <table>
+            <tr>
+            <th>Taxon</th>
     `;
     
+    //Title row
     if(itemsValue||allValue) {
-        r+=`<img src="col-items.png">`;
+        r+=`<th>Items</th>`;
     }
     if(weightValue||allValue) {
-        r+=`<img src="col-weight.png">`;
+        r+=`<th>Weight</th>`;
     }
 
-    r+=`<img src="col-unspecified.png">`;
+    r+=`<th>Unspecified</th>`;
     if(occurValue||allValue) {
-        r+=`<img src="col-occur.png">`;
+        r+=`<th>Occurrence</th>`;
+    }
+
+    //Further rows
+    // for(let i=0; i<currentBird.)
+    // if(itemsValue||allValue) {
+    //     r+=`<th>Items</th>`;
+    // }
+    if(weightValue||allValue) {
+        r+=`<th>Weight</th>`;
+    }
+
+    r+=`<th>Unspecified</th>`;
+    if(occurValue||allValue) {
+        r+=`<th>Occurrence</th>`;
     }
 
 
-    r+=`</div>
+    r+=`</tr>`;
+
+    
+    r+=`</table></div>
     <div class="column">
         <h3 class="title">Data sources:</h3>
         <p>Beal, F. E.L. 1941. Common birds of southeastern United States in relation to agricutlure. U.S. Fish and Wildlife Service Conservation Bulletin 15.

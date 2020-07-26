@@ -4,6 +4,282 @@ $(function () {
     renderPage();
 });
 
+species[0]= {
+    commonName: "Bobolink",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Icteridae",
+    genus: "Dolichonyx",
+    species: "D. oeyzivorus",
+    records: "444",
+    studies: "7",
+    
+    
+}
+
+species[1]= {
+    commonName: "Grasshopper Sparrow",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Passerellidae",
+    genus: "Ammodramus",
+    species: "A. savannarum",
+    records: "336",
+    studies: "5",
+    
+}
+
+species[2]= {
+    commonName: "Philidelphia Vireo",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Vireonidae",
+    genus: "Vireo",
+    species: "V. philadelphicus",
+    records: "749",
+    studies: "11",
+    
+}
+
+species[3]= {
+    commonName: "Indigo Bunting",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Cardinalidae",
+    genus: "Passerina",
+    species: "P. cyanea",
+    records: "810",
+    studies: "12",
+    
+}
+
+species[4]= {
+    commonName: "Oak Titmouse",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Paridae",
+    genus: "Baeolophus",
+    species: "B. inornatus",
+    records: "583",
+    studies: "9",
+}
+
+species[5]= {
+    commonName: "Yellow-billed Cuckoo",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Cuculiformes",
+    family: "Cuculidae",
+    genus: "Coccyzus",
+    species: "C. americanus",
+    records: "198",
+    studies: "5",
+    
+}
+
+species[6]= {
+    commonName: "Golden-crowned Kinglet",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Regulidae",
+    genus: "Regulus",
+    species: "R. satrapa",
+    records: "689",
+    studies: "8",
+    
+}
+
+species[7]= {
+    commonName: "California Scrub-Jay",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Corvidae",
+    genus: "Aphelocoma",
+    species: "A. californica",
+    records: "700",
+    studies: "8",
+    
+}
+
+species[8]= {
+    commonName: "Yellow-billed Magpie",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "",
+    family: "",
+    genus: "",
+    species: "",
+    records: "234",
+    studies: "4",
+    
+}
+
+species[9]= {
+    commonName: "Baltimore Oriole",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Icteridae",
+    genus: "Icterus",
+    species: "I. galbula",
+    records: "259",
+    studies: "3",
+    
+}
+
+species[10]= {
+    commonName: "Cedar Waxwing",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Bombycillidae",
+    genus: "Bombycilla",
+    species: "B. cedrorum",
+    records: "688",
+    studies: "10",
+    
+}
+
+species[11]= {
+    commonName: "Tennessee Warbler",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Parulidae",
+    genus: "Leiothlypis",
+    species: "L. peregrina",
+    records: "799",
+    studies: "11",
+    
+}
+
+species[12]= {
+    commonName: "Elegant Trogon",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Trogoniformes",
+    family: "Trogonidae",
+    genus: "Trogon",
+    species: "T. elegans",
+    records: "801",
+    studies: "12",
+    
+}
+
+species[13]= {
+    commonName: "Evening Grosbeak",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Fringillidae",
+    subfamily: "Carduelinae",
+    genus: "Coccothraustes",
+    species: "C. vespertinus",
+    records: "523",
+    studies: "4",
+    
+}
+
+species[14]= {
+    commonName: "Chipping Sparrow",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Passerellidae",
+    genus: "Spizella",
+    species: "S. passerina",
+    records: "783",
+    studies: "9",
+    
+}
+
+species[15]= {
+    commonName: "Red-tailed Hawk",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Accipitriformes",
+    family: "Accipitridae",
+    genus: "Buteo",
+    species: "B. jamaicensis",
+    records: "877",
+    studies: "12",
+    records: "877",
+    studies: "12",
+    
+}
+
+species[16]= {
+    commonName: "Blue Grosbeak",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Cardinalidae",
+    genus: "Passerina",
+    species: "P. caerulea",
+    records: "300",
+    studies: "5",
+    
+}
+
+species[17]= {
+    commonName: "Northern Cardinal",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Passeriformes",
+    family: "Cardinalidae",
+    genus: "Cardinalis",
+    species: "C. cardinalis",
+    records: "500",
+    studies: "10",
+    
+}
+
+species[18]= {
+    commonName: "Bald Eagle",
+    kingdom: "Animalia",
+    phylum: "Chordata",
+    class: "Aves",
+    order: "Accipitriformes",
+    family: "Accipitridae",
+    genus: "Haliaeetus",
+    species: "H. leucocephalus",
+    records: "1218",
+    studies: "22",
+
+    
+}
+
+
+
+$(function () {
+    renderPage();
+});
+
 export function renderPage() {
 
     let r;
@@ -104,6 +380,7 @@ export function renderPage() {
 
 }
 
+//Generates table depending on selected conditions
 export function handleSubmitButtonPress(event) {
     let allValue = document.getElementById('all').checked;
     let itemsValue = document.getElementById('items').checked;
