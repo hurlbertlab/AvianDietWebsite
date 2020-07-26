@@ -320,8 +320,12 @@ export function renderPage() {
       };
       
       $.ajax(settings).done(function (response) {
+        console.log(response);
         thisBird=response;
       });
+
+      console.log("This bird is "+ thisBird.Common_Name);
+      console.log(thisBird);
 
 
     // for(let i=0; i<species.length; i++) {
