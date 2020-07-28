@@ -5,283 +5,7 @@ const $root = $('#root');
 //These can later be put into a different file and they should be in one now,
 //but I wasn't really sure how to connect them.
 
-let species = [];
-
-species[0]= {
-    commonName: "Bobolink",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Icteridae",
-    genus: "Dolichonyx",
-    species: "D. oeyzivorus",
-    records: 444,
-    studies: 7,
-    
-    
-}
-
-species[1]= {
-    commonName: "Grasshopper Sparrow",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Passerellidae",
-    genus: "Ammodramus",
-    species: "A. savannarum",
-    records: 336,
-    studies: 5,
-    
-}
-
-species[2]= {
-    commonName: "Philidelphia Vireo",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Vireonidae",
-    genus: "Vireo",
-    species: "V. philadelphicus",
-    records: 749,
-    studies: 11,
-    
-}
-
-species[3]= {
-    commonName: "Indigo Bunting",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Cardinalidae",
-    genus: "Passerina",
-    species: "P. cyanea",
-    records: 810,
-    studies: 12,
-    
-}
-
-species[4]= {
-    commonName: "Oak Titmouse",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Paridae",
-    genus: "Baeolophus",
-    species: "B. inornatus",
-    records: 583,
-    studies: 9,
-}
-
-species[5]= {
-    commonName: "Yellow-billed Cuckoo",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Cuculiformes",
-    family: "Cuculidae",
-    genus: "Coccyzus",
-    species: "C. americanus",
-    records: 198,
-    studies: 5,
-    
-}
-
-species[6]= {
-    commonName: "Golden-crowned Kinglet",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Regulidae",
-    genus: "Regulus",
-    species: "R. satrapa",
-    records: 689,
-    studies: 8,
-    
-}
-
-species[7]= {
-    commonName: "California Scrub-Jay",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Corvidae",
-    genus: "Aphelocoma",
-    species: "A. californica",
-    records: 700,
-    studies: 8,
-    
-}
-
-species[8]= {
-    commonName: "Yellow-billed Magpie",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "",
-    family: "",
-    genus: "",
-    species: "",
-    records: 234,
-    studies: 4,
-    
-}
-
-species[9]= {
-    commonName: "Baltimore Oriole",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Icteridae",
-    genus: "Icterus",
-    species: "I. galbula",
-    records: 259,
-    studies: 3,
-    
-}
-
-species[10]= {
-    commonName: "Cedar Waxwing",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Bombycillidae",
-    genus: "Bombycilla",
-    species: "B. cedrorum",
-    records: 688,
-    studies: 10,
-    
-}
-
-species[11]= {
-    commonName: "Tennessee Warbler",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Parulidae",
-    genus: "Leiothlypis",
-    species: "L. peregrina",
-    records: 799,
-    studies: 11,
-    
-}
-
-species[12]= {
-    commonName: "Elegant Trogon",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Trogoniformes",
-    family: "Trogonidae",
-    genus: "Trogon",
-    species: "T. elegans",
-    records: 801,
-    studies: 12,
-    
-}
-
-species[13]= {
-    commonName: "Evening Grosbeak",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Fringillidae",
-    subfamily: "Carduelinae",
-    genus: "Coccothraustes",
-    species: "C. vespertinus",
-    records: 523,
-    studies: 4,
-    
-}
-
-species[14]= {
-    commonName: "Chipping Sparrow",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Passerellidae",
-    genus: "Spizella",
-    species: "S. passerina",
-    records: 783,
-    studies: 9,
-    
-}
-
-species[15]= {
-    commonName: "Red-tailed Hawk",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Accipitriformes",
-    family: "Accipitridae",
-    genus: "Buteo",
-    species: "B. jamaicensis",
-    records: 877,
-    studies: 12,
-    
-}
-
-species[16]= {
-    commonName: "Blue Grosbeak",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Cardinalidae",
-    genus: "Passerina",
-    species: "P. caerulea",
-    records: 300,
-    studies: 5,
-    
-}
-
-species[17]= {
-    commonName: "Northern Cardinal",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Passeriformes",
-    family: "Cardinalidae",
-    genus: "Cardinalis",
-    species: "C. cardinalis",
-    records: 500,
-    studies: 10,
-    prey: [{
-        preyName: "Caryophyllales",
-        items: .3638,
-        weight: "NA",
-        occur: ".0543"
-    }]
-    
-}
-
-species[18]= {
-    commonName: "Bald Eagle",
-    kingdom: "Animalia",
-    phylum: "Chordata",
-    class: "Aves",
-    order: "Accipitriformes",
-    family: "Accipitridae",
-    genus: "Haliaeetus",
-    species: "H. leucocephalus",
-    records: "1218",
-    studies: "22",
-
-    
-}
-
-
+let thisBird;
 
 $(function () {
     renderPage();
@@ -295,13 +19,16 @@ export function renderPage() {
     console.log("bird name is " + birdName);
     let a=birdName;
     var b = '';
+    let c = '';
     for (var i = 0; i < a.length; i++) {
         if (a[i] >= 'A' && a[i] <= 'z' || a[i]=='+') {
             if(a[i]=='+'){
                 b+=' ';
+                c+=a[i];
             }
             else
-            {b += a[i];}
+            {b += a[i]
+                c+=a[i];}
             
         }
     }
@@ -309,12 +36,17 @@ export function renderPage() {
 
     b=b.substring(8);
     console.log(b);
+    c=c.substring(8);
 
     let r;
-    let thisBird=species[0];
+    //thisBird=species[0];
+    console.log("c is " + c);
+    
 
+    let urlUsed = ("https://birddietmiddlelayer.herokuapp.com/bird_search?bird=" + c);
+    console.log(urlUsed);
     var settings = {
-        "url": "https://birddietmiddlelayer.herokuapp.com/bird_search?bird=" + b,
+        "url": urlUsed,
         "method": "GET",
         "timeout": 0,
       };
@@ -322,10 +54,17 @@ export function renderPage() {
       $.ajax(settings).done(function (response) {
         console.log(response);
         thisBird=response;
+        //console.log("Space indicating...");
+        //console.log(thisBird);
+        //console.log(thisBird[0].Scientific_Name);
       });
 
-      console.log("This bird is "+ thisBird.Common_Name);
-      console.log(thisBird);
+      setTimeout(function() {
+        console.log("This bird is "+ thisBird[0].Scientific_Name);
+        console.log(thisBird);
+      }, 3000);
+      
+
 
 
     // for(let i=0; i<species.length; i++) {
@@ -335,23 +74,28 @@ export function renderPage() {
     //     }
     // }
 
-    
+    setTimeout(function() {  
+
+        let counter=0;
+        for(let i =0; i<thisBird.length; i++) {
+            counter++;
+        }
 
     r=`
     <br><br><br>
         <div>
             <div class="columns">
                 <div class="column">
-                    <h1 class="subtitle">What does <b>${b}</b> eat?</h1>
+                    <h1 class="subtitle center">What does <b>${b}</b> eat?</h1>
             
                     <div class="columns">
                         <div class="column">
-                            <h2><b>108</b> records</h2>
-                            <img src="first-half-graphs.png">
+                            <h2 class="center"><b>${counter}</b> records</h2>
+                            <img src="first-half-graphs.png" class="center">
                         </div>
                         <div class="column">
                             <h2><b>4</b> studies</h2>
-                            <img src="first-half-graphs.png">
+                            <img src="first-half-graphs.png" class="center">
                         </div>
                     </div>
                 </div>
@@ -459,8 +203,9 @@ export function renderPage() {
             <option value="order">order</option>
             <option value="family">family</option>
             <option value="genus">genus</option>
-            <option value="species">species</option>
-          </select> the <u><b>${thisBird.commonName} <i>(${thisBird.species})</i></b></u>
+            <option value="species">species</option>`
+
+          r+=`</select> the <u><b>${b} <i>(${thisBird[0].Scientific_Name})</i></b></u>
           eats: <input type="submit" id="conditions" value="Submit" />
           <br><br><br>
 
@@ -471,6 +216,7 @@ export function renderPage() {
 
     $root.append(r);
     $root.on('click', "#conditions", handleSubmitButtonPress);
+}, 1000);
 
 }
 
@@ -484,6 +230,7 @@ export function handleSubmitButtonPress(event) {
     let r=`<div id="table">
     <div class="columns">
         <div class="column">
+        <div class="scrollbox betterscroll" id="betterscroll">
         <table style="width:100%">
             <table>
             <tr>
@@ -498,45 +245,141 @@ export function handleSubmitButtonPress(event) {
         r+=`<th>Weight</th>`;
     }
 
-    r+=`<th>Unspecified</th>`;
     if(occurValue||allValue) {
         r+=`<th>Occurrence</th>`;
     }
-
-    //Further rows
-    // for(let i=0; i<currentBird.)
-    // if(itemsValue||allValue) {
-    //     r+=`<th>Items</th>`;
-    // }
-    if(weightValue||allValue) {
-        r+=`<th>Weight</th>`;
-    }
-
-    r+=`<th>Unspecified</th>`;
-    if(occurValue||allValue) {
-        r+=`<th>Occurrence</th>`;
-    }
-
 
     r+=`</tr>`;
 
+    let alreadyCounted = [];
+    let j=0;
+    let isUnique=true;
+
+    //This will go through each piece of data for this bird and makes sure
+    //each only gets counted once when summing up values for the table.
+    for(let i=0; i<thisBird.length; i++) {
+
+        for(let k = 0; k<alreadyCounted.length; k++){
+            if(alreadyCounted[k]==thisBird[i].Prey_Common_Name){
+                isUnique=false;
+
+            }
+        }
+
+        if(isUnique) {
+
+            alreadyCounted[j]=thisBird[i].Prey_Common_Name;
+            j++;
+            let values=countNumbers(thisBird[i].Prey_Common_Name);
+
+            r+=`<tr><td>${thisBird[i].Prey_Common_Name}</td>`
+            
+            if(itemsValue||allValue) {
+                r+=`<td>${values.items}</td>`;
+            }
+            if(weightValue||allValue) {
+                r+=`<td>${values.weight}</td>`;
+            }
+            if(occurValue||allValue) {
+                r+=`<td>${values.occur}</td></tr>`;
+            }
+        }
+
+        // if(allValue) {
+
+        // }
+
+        isUnique=true;
+
+    }
+
+    //repeated from renderPage
+    let birdName=window.location.search;
+    console.log("bird name is " + birdName);
+    let a=birdName;
+    var b = '';
+    let c = '';
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] >= 'A' && a[i] <= 'z' || a[i]=='+') {
+            if(a[i]=='+'){
+                b+=' ';
+                c+=a[i];
+            }
+            else
+            {b += a[i]
+                c+=a[i];}
+            
+        }
+    }
+    console.log(b);
+
+    b=b.substring(8);
+    console.log(b);
+    c=c.substring(8);
+
+    console.log("c is " + c);
+//end of repeat
+let sources;
+let sourceURL="https://birddietmiddlelayer.herokuapp.com/sources?bird="+c;
+var settings = {
+  "url": sourceURL,
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  sources=response;
+});
     
-    r+=`</table></div>
-    <div class="column">
-        <h3 class="title">Data sources:</h3>
-        <p>Beal, F. E.L. 1941. Common birds of southeastern United States in relation to agricutlure. U.S. Fish and Wildlife Service Conservation Bulletin 15.
+setTimeout(function() {
+    r+=`</table></div></div>
+    <div class="column"><div class="scrollbox betterscroll">
+        <h3 class="title">Data sources:</h3>`;
+        for(let i=0; i<sources.length; i++) {
+       r+= `<p>${sources[i].Source}
         </p>
         <br>
-        <p>McAtee, W. L. 1908. Food habits of the grosbeaks. U.S. Department of Agriculture Biological Survey, Bulletin No. 32. Washington, D.C.
-        </p>
-        <br>
-        <p>Martin, A. C., Zim, H. S., and Nelson, A. L. 1961. American wildlife & plants : a guide to wildlife food habits : the use of trees, shrubs, weeds, and herbs by birds and mammals of the United States. Dover Publications, New York, 500 pp.
-        </p>
-        <br>
-        <p>Howell, A. 1928. Birds of Alabama. Department of Game and Fisheries of Alabama.
-        </p>
-    </div>
+        `;
+        }
+    r+=`</div></div>
     </div>
     </div>`;
     $('#table').replaceWith(r);
+}, 2000);
+}
+
+//This function sums up each kind of fraction for each type of diet measurement
+//Some types will need different methods, but this uses the same basic one for
+//each.
+export function countNumbers(str) {
+
+    let fullSet = {
+        items: 0,
+        weight: 0,
+        occur: 0,
+    }
+    for(let i=0; i<thisBird.length; i++) {
+        
+        if(thisBird[i].Prey_Common_Name==str) {
+
+            if(thisBird[i].Diet_Type=="Items") {
+
+                fullSet.items+=thisBird[i].Fraction_Diet;
+
+            }
+            if(thisBird[i].Diet_Type=="Wt_or_Vol") {
+
+                fullSet.weight+=thisBird[i].Fraction_Diet;
+
+            }
+            if(thisBird[i].Diet_Type=="Occurrence") {
+                
+                fullSet.occur+=thisBird[i].Fraction_Diet;
+
+            }
+        }
+    }
+
+    return fullSet;
 }

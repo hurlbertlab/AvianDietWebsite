@@ -4,6 +4,8 @@ $(function () {
     renderPage();
 });
 
+let birdList;
+
 let species=[];
 
 species[0]= {
@@ -295,36 +297,154 @@ species[19]= {
 
 export function renderPage() {
 
+    var settings = {
+        "url": "https://birddietmiddlelayer.herokuapp.com/all_birds",
+        "method": "GET",
+        "timeout": 0,
+      };
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        birdList=response;
+      });
+
+      setTimeout(function(){
+
+        let birdNames = [];
+        for(let i=0; i<birdList.length; i++) {
+            birdNames[i]=birdList[i].Common_Name;
+        }
+        console.log(birdNames);
+
 let r;
-r=`<div class="title has-text-centered">Avian Diet Database</div>
+r=`<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), ${birdNames});
+</script>
+<div class="container"><br><br><div class="title has-text-centered">Avian Diet Database</div><br>
 <div class="columns is-vcentered">
-    <div class="column has-text-centered subtitle">Number of records<br>56,008</div>
-    <div class="column has-text-centered subtitle">Number of studies<br>722</div>
-    <div class="column has-text-centered subtitle">Number of species<br>600</div>
+    <div class="column has-text-centered data-display subtitle"><i>Number of records</i><br><b><span class="number-display">56,008</span></b></div>
+    <div class="column has-text-centered data-display subtitle"><i>Number of studies</i><br><b><span class="number-display">722</span></b></div>
+    <div class="column has-text-centered data-display subtitle"><i>Number of species</i><br><b><span class="number-display">600</span></b></div>
 </div>
 <div class="columns is-vcentered"> 
-    <div class="column has-text-centered"><form action="bird-display.html" method="GET">What does <input type="text" name="birdName"/> eat?
-    <input type="submit" value="Submit" /></div>
+    <div class="column has-text-centered"><form autocomplete="off" action="bird-display.html" method="GET">What does <span class="autocomplete"><input type="text" class="search" name="birdName" id="myInput"/></span> eat?
+    <br><br><input type="submit" value="Search" class="search-button" /></div>
 </form>
 
-    <div class="column has-text-centered">What eats <b>Lepidoptera</b>?</div><br><form action="prey-display.html">
-        <input type="submit" value="Submit" />
+    <div class="column has-text-centered"><form action="prey-display.html" method="GET">What eats <input type="text" class="search" name="birdName"/>?
+        <br><br><input type="submit" value="Search" class="search-button" /></div>
     </form>
 </div>
 <div class="columns is-vcentered">
-    <div class="column has-text-centered"><h1 class="subtitle">Top 10 species</h1><br>
+    <div class="column has-text-centered"><h1 class="subtitle">Top 10 species</h1>
         <table style="width:100%">`
+
+        //NOTE: This first table section will need to go through a lot of reworking
+        //because it does not implement the database. This uses placeholder values
+        //from the array at the top of the page. It is not a very complicated fix but 
+        //Right now it is a missing function
 
         let sortedBirds = [];
         let array=species;
-
-        /*
-        for(let i=0; i<species.length; i++) {
-            if(species[i]>sortedBirds[i]) {
-                
-            }
-        }
-        */
 
        
         let swapped = false 
@@ -368,17 +488,19 @@ r=`<div class="title has-text-centered">Avian Diet Database</div>
       </table></div>
     <div class="column has-text-centered"><h1 class="subtitle">Bird Family Summary</h1>`
 
+
+    //This needs to be changed when I can reference all the birds
     let alreadyListed = [];
     let j=0;
     let included = false;
-    for(let i=0; i<species.length; i++) {
+    for(let i=0; i<birdList.length; i++) {
         for (let k=0; k<alreadyListed.length; k++) {
-            if(species[i].family==alreadyListed[k]) {
+            if(birdList[i].Family==alreadyListed[k]) {
                 included = true;
             }
         }
         if(!included) {
-            alreadyListed[j]=species[i].family;
+            alreadyListed[j]=birdList[i].Family;
             j++;
         }
         included=false;
@@ -388,39 +510,57 @@ r=`<div class="title has-text-centered">Avian Diet Database</div>
     r+=`<form>
     <select name="families" onchange="submitPress()" id="families">
    `;
+   
 
     for(let m=0; m<alreadyListed.length; m++){
 
         r+=`<option value="${alreadyListed[m]}">${alreadyListed[m]}</option>`
         
     }
+    let selectValue = alreadyListed[0];
+    console.log(selectValue);
 
+    // var settings = {
+    //     "url": "https://birddietmiddlelayer.herokuapp.com/family_count?bird=",
+    //     "method": "GET",
+    //     "timeout": 0,
+    //   };
+      
+    //   $.ajax(settings).done(function (response) {
+    //     console.log(response);
+        
+    //   });
 
     r+=` </select>
-  </form><br>
+  </form><br><div class="scrollbox">
         <table style="width:100%" id="familyTable">
         <tr>
           <th>Species</th>
           <th>Records</th> 
         </tr>`;
 
-        let selectValue = alreadyListed[0]; 
-        for(let i=0; i<species.length; i++) {
-            if(species[i].family==selectValue) {
+         //Here, we're leaving the species reference because referring to the
+         //study_count query was causing some server issues. But that should be
+         //called for each bird and displayed in that spot.
+        for(let i=0; i<birdList.length; i++) {
+            if(birdList[i].Family==selectValue) {
                 r+=`<tr>
-                <td>${species[i].commonName}</td>
+                <td>${birdList[i].Common_Name}</td>
                 <td>${species[i].studies}</td>
                 </tr>`;
+                
             }
         }
 
        r+= `
-      </table></div>
+      </table></div></div>
 </div>
-</body>`;
+</div></body>`;
 
 $root.append(r);
 $root.on('change', "#families", submitPress);
+
+    }, 2000);
 
 }
 
@@ -432,16 +572,60 @@ export function submitPress(event) {
           <th>Species</th>
           <th>Records</th> 
         </tr>`;
-        for(let i=0; i<species.length; i++) {
-            if(species[i].family==selectValue) {
-                content+=`<tr>
-                <td>${species[i].commonName}</td>
-                <td>${species[i].studies}</td>
-                </tr>`;
+        for(let i=0; i<birdList.length; i++) {
+            if(birdList[i].Family==selectValue) {
+                let numRecords=0;
+                let currrentBirdURL = ("https://birddietmiddlelayer.herokuapp.com/record_count?bird="+birdList[i].Common_Name);
+                let currentBirdRecords;
+                // var settings = {
+                //     "url": currrentBirdURL,
+                //     "method": "GET",
+                //     "timeout": 0,
+                //   };
+                  
+                //   $.ajax(settings).done(function (response) {
+                //     console.log(response);
+                //     currentBird = response;
+                //     for(let j=0; j<currentBird.length; j++) {
+                //         numRecords++;
+                //     }
+                    
+                    
+                //   });
+
+                var settings = {
+                    "url": currrentBirdURL,
+                    "method": "GET",
+                    "timeout": 0,
+                  };
+                  
+                  $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    let currentBirdRecords=response;
+
+                    //console.log(currentBirdRecords[Object.keys(currentBirdRecords[0])]);
+                    //Here, we're leaving the species reference because referring to the
+                    //study_count query was causing some server issues. But that should be
+                    //called for each bird and displayed in that spot.
+                    content+=`<tr>
+                    <td>${birdList[i].Common_Name}</td>
+                    <td>${species[i].studies}</td>
+                    </tr>`;
+                    console.log("Tried to add a bird");
+                  });
+
+                  
+
+                  console.log("The bird being displayed here was " + birdList[i].Common_Name);
+                
+                
             }
         }
+
+        setTimeout(function() {
         content+=`</table>`;
 
         $('#familyTable').replaceWith(content);
+        }, 2000);
 
 }
